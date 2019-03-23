@@ -7,14 +7,41 @@ using UsingCompositeCommands.Core.Utilities;
 
 namespace UsingCompositeCommands.Core
 {
+    /// <summary>
+    /// Volume calculation service
+    /// </summary>
     public interface IVolumeCalculationService
     {
+        /// <summary>
+        /// Calculates the volume.
+        /// </summary>
+        /// <param name="heightInMeter">The height in meter.</param>
+        /// <param name="cellHeightInMeter">The cell height in meter.</param>
+        /// <param name="cellWidthInMeter">The cell width in meter.</param>
+        /// <returns></returns>
         double CalculateVolume(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter);
+
+
+        /// <summary>
+        /// Calculates the oil and gas volume from top horizon.
+        /// </summary>
+        /// <param name="topHorizon2DDepthInFeet">The top horizon 2d depth in feet.</param>
+        /// <returns></returns>
         double CalculateOilAndGasVolumeFromTopHorizon(int[,] topHorizon2DDepthInFeet);
     }
 
+    /// <summary>
+    /// Volume calculation service
+    /// </summary>
+    /// <seealso cref="UsingCompositeCommands.Core.IVolumeCalculationService" />
     public class VolumeCalculationService : IVolumeCalculationService
     {
+        /// <summary>
+        /// Gets the volume unit.
+        /// </summary>
+        /// <value>
+        /// The volume unit.
+        /// </value>
         public Constants.VolumeUnit VolumeUnit
         {
             get
@@ -23,6 +50,11 @@ namespace UsingCompositeCommands.Core
             }
         }
 
+        /// <summary>
+        /// Calculates the oil and gas volume from top horizon.
+        /// </summary>
+        /// <param name="topHorizon2DDepthInFeet">The top horizon 2d depth in feet.</param>
+        /// <returns></returns>
         public double CalculateOilAndGasVolumeFromTopHorizon(int[,] topHorizon2DDepthInFeet)
         {
             double volumeOfOilAndGasInCubicMeter = 0;
@@ -48,6 +80,13 @@ namespace UsingCompositeCommands.Core
             return volumeOfOilAndGasInCubicMeter;
         }
 
+        /// <summary>
+        /// Calculates the volume.
+        /// </summary>
+        /// <param name="heightInMeter">The height in meter.</param>
+        /// <param name="cellHeightInMeter">The cell height in meter.</param>
+        /// <param name="cellWidthInMeter">The cell width in meter.</param>
+        /// <returns></returns>
         public double CalculateVolume(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter)
         {
             return heightInMeter * cellHeightInMeter * cellWidthInMeter;
