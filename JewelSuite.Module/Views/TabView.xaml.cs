@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ModuleA.Views
+namespace JewelSuite.Module.Views
 {
     /// <summary>
     /// Interaction logic for TabView

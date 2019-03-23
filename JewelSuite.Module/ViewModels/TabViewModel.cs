@@ -1,11 +1,11 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using System;
-using UsingCompositeCommands.Core;
-using UsingCompositeCommands.Core.Utilities;
+using JewelSuite.Core;
+using JewelSuite.Core.Utilities;
 using System.Linq;
 
-namespace ModuleA.ViewModels
+namespace JewelSuite.Module.ViewModels
 {
     public class TabViewModel : BindableBase
     {

@@ -1,7 +1,7 @@
 ﻿using Prism.Mvvm;
-using UsingCompositeCommands.Core;
+using JewelSuite.Core;
 
-namespace UsingCompositeCommands.ViewModels
+namespace JewelSuite.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace UsingCompositeCommands.Views
+namespace JewelSuite.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

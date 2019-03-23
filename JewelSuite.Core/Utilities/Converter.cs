@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsingCompositeCommands.Core.Utilities
+namespace JewelSuite.Core.Utilities
 {
     public static class Converter
     {

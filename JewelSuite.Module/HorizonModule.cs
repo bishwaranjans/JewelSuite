@@ -1,14 +1,14 @@
-﻿using ModuleA.ViewModels;
-using ModuleA.Views;
+﻿using JewelSuite.Module.ViewModels;
+using JewelSuite.Module.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using System;
-using UsingCompositeCommands.Core.Utilities;
+using JewelSuite.Core.Utilities;
 
-namespace ModuleA
+namespace JewelSuite.Module
 {
-    public class ModuleAModule : IModule
+    public class HorizonModule : IModule
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UsingCompositeCommands.Core.Utilities;
+using JewelSuite.Core.Utilities;
 
-namespace UsingCompositeCommands.Core
+namespace JewelSuite.Core
 {
     /// <summary>
     /// Volume calculation service

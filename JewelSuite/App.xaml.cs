@@ -2,10 +2,10 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
-using UsingCompositeCommands.Core;
-using UsingCompositeCommands.Views;
+using JewelSuite.Core;
+using JewelSuite.Views;
 
-namespace UsingCompositeCommands
+namespace JewelSuite
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -19,7 +19,7 @@ namespace UsingCompositeCommands
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.AddModule<ModuleA.ModuleAModule>();
+            moduleCatalog.AddModule<JewelSuite.Module.HorizonModule>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
