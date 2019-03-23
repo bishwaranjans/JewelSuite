@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ModuleA/bin/Debug
+/ModuleA/obj/Debug
+/packages
+/UsingCompositeCommands/bin/Debug
+/UsingCompositeCommands/obj/Debug
+/UsingCompositeCommands.Core/bin/Debug
+/UsingCompositeCommands.Core/obj/Debug
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
