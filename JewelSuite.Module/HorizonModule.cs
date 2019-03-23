@@ -17,7 +17,7 @@ namespace JewelSuite.Module
 
             foreach (Constants.VolumeUnit volumeTab in Enum.GetValues(typeof(Constants.VolumeUnit)))
             {
-                var tab = containerProvider.Resolve<TabView>();
+                var tab = containerProvider.Resolve<HorizonView>();
                 SetTitle(tab, volumeTab.ToString());
                 region.Add(tab);
             }
@@ -28,9 +28,9 @@ namespace JewelSuite.Module
 
         }
 
-        void SetTitle(TabView tab, string title)
+        void SetTitle(HorizonView tab, string title)
         {
-            (tab.DataContext as TabViewModel).Title = title;
+            (tab.DataContext as HorizonViewModel).Title = title;
         }
     }
 }

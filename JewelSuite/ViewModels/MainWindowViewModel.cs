@@ -5,7 +5,7 @@ namespace JewelSuite.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Unity Application";
+        private string _title = "JewelSuite";
         public string Title
         {
             get { return _title; }

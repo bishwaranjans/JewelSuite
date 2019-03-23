@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelSuite.Module", "JewelS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelSuite.Core", "JewelSuite.Core\JewelSuite.Core.csproj", "{21BDF260-ADD4-418B-9E0D-C2F5C63A999E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelSuite.UnitTests", "JewelSuite.Tests\JewelSuite.UnitTests\JewelSuite.UnitTests.csproj", "{A7931AEF-D4A7-45D4-B3B9-7AB691BE78D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{21BDF260-ADD4-418B-9E0D-C2F5C63A999E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21BDF260-ADD4-418B-9E0D-C2F5C63A999E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21BDF260-ADD4-418B-9E0D-C2F5C63A999E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7931AEF-D4A7-45D4-B3B9-7AB691BE78D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7931AEF-D4A7-45D4-B3B9-7AB691BE78D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7931AEF-D4A7-45D4-B3B9-7AB691BE78D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7931AEF-D4A7-45D4-B3B9-7AB691BE78D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

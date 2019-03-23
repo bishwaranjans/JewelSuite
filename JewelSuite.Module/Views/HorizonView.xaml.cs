@@ -5,9 +5,9 @@ namespace JewelSuite.Module.Views
     /// <summary>
     /// Interaction logic for TabView
     /// </summary>
-    public partial class TabView : UserControl
+    public partial class HorizonView : UserControl
     {
-        public TabView()
+        public HorizonView()
         {
             InitializeComponent();
         }
