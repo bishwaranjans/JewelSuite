@@ -22,7 +22,7 @@ namespace JewelSuite.Module
             IRegion region = regionManager.Regions["ContentRegion"];
 
             var tab = containerProvider.Resolve<HorizonView>();
-            SetTitle(tab, "Volume Calculation", "This section calculate the volumes of the oil and gas in place in a certain reservoir zone i.e. the volume between the top and base horizons and above the fluid contact.");
+            SetTitle(tab, "Volume Calculation", "This section calculates the volumes of the oil and gas in place in a certain reservoir zone i.e. the volume between the top and base horizons and above the fluid contact.The 2D top horizon data loaded during application initialization.");
             region.Add(tab);
 
         }
