@@ -3,34 +3,49 @@ using JewelSuite.Module.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
-using System;
-using JewelSuite.Core.Utilities;
 
 namespace JewelSuite.Module
 {
+    /// <summary>
+    /// Horizon Module
+    /// </summary>
+    /// <seealso cref="Prism.Modularity.IModule" />
     public class HorizonModule : IModule
     {
+        /// <summary>
+        /// Notifies the module that it has be initialized.
+        /// </summary>
+        /// <param name="containerProvider"></param>
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
             IRegion region = regionManager.Regions["ContentRegion"];
 
-            foreach (Constants.VolumeUnit volumeTab in Enum.GetValues(typeof(Constants.VolumeUnit)))
-            {
-                var tab = containerProvider.Resolve<HorizonView>();
-                SetTitle(tab, volumeTab.ToString());
-                region.Add(tab);
-            }
+            var tab = containerProvider.Resolve<HorizonView>();
+            SetTitle(tab, "Volume Calculation", "This section calculate the volumes of the oil and gas in place in a certain reservoir zone i.e. the volume between the top and base horizons and above the fluid contact.");
+            region.Add(tab);
+
         }
 
+        /// <summary>
+        /// Used to register types with the container that will be used by your application.
+        /// </summary>
+        /// <param name="containerRegistry"></param>
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
         }
 
-        void SetTitle(HorizonView tab, string title)
+        /// <summary>
+        /// Sets the title.
+        /// </summary>
+        /// <param name="tab">The tab.</param>
+        /// <param name="title">The title.</param>
+        /// <param name="description">The description.</param>
+        void SetTitle(HorizonView tab, string title, string description)
         {
             (tab.DataContext as HorizonViewModel).Title = title;
+            (tab.DataContext as HorizonViewModel).Description = description;
         }
     }
 }

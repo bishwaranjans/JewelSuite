@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using JewelSuite.Core.Utilities;
+﻿using JewelSuite.Core.Utilities;
 
 namespace JewelSuite.Core
 {
@@ -19,15 +14,14 @@ namespace JewelSuite.Core
         /// <param name="cellHeightInMeter">The cell height in meter.</param>
         /// <param name="cellWidthInMeter">The cell width in meter.</param>
         /// <returns></returns>
-        double CalculateVolume(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter);
-
+        double CalculateVolumeInCubicMeter(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter);
 
         /// <summary>
         /// Calculates the oil and gas volume from top horizon.
         /// </summary>
         /// <param name="topHorizon2DDepthInFeet">The top horizon 2d depth in feet.</param>
         /// <returns></returns>
-        double CalculateOilAndGasVolumeFromTopHorizon(int[,] topHorizon2DDepthInFeet);
+        double CalculateOilAndGasVolumeFromTopHorizonInCubicMeter(int[,] topHorizon2DDepthInFeet);
     }
 
     /// <summary>
@@ -55,7 +49,7 @@ namespace JewelSuite.Core
         /// </summary>
         /// <param name="topHorizon2DDepthInFeet">The top horizon 2d depth in feet.</param>
         /// <returns></returns>
-        public double CalculateOilAndGasVolumeFromTopHorizon(int[,] topHorizon2DDepthInFeet)
+        public double CalculateOilAndGasVolumeFromTopHorizonInCubicMeter(int[,] topHorizon2DDepthInFeet)
         {
             double volumeOfOilAndGasInCubicMeter = 0;
             for (int row = 0; row < topHorizon2DDepthInFeet.GetLength(0); row++)
@@ -74,7 +68,7 @@ namespace JewelSuite.Core
                         continue;
                     }
                     var heightInMeter = baseHorizonInMeter > fluidContactInMeter ? fluidContactInMeter : baseHorizonInMeter;
-                    volumeOfOilAndGasInCubicMeter += CalculateVolume(heightInMeter, Constants.CellHeightInFeet.ToMeter(), Constants.CellWidthInFeet.ToMeter());
+                    volumeOfOilAndGasInCubicMeter += CalculateVolumeInCubicMeter(heightInMeter, Constants.CellHeightInFeet.ToMeter(), Constants.CellWidthInFeet.ToMeter());
                 }
             }
             return volumeOfOilAndGasInCubicMeter;
@@ -87,7 +81,7 @@ namespace JewelSuite.Core
         /// <param name="cellHeightInMeter">The cell height in meter.</param>
         /// <param name="cellWidthInMeter">The cell width in meter.</param>
         /// <returns></returns>
-        public double CalculateVolume(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter)
+        public double CalculateVolumeInCubicMeter(double heightInMeter, double cellHeightInMeter, double cellWidthInMeter)
         {
             return heightInMeter * cellHeightInMeter * cellWidthInMeter;
         }

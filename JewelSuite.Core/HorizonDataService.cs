@@ -1,23 +1,42 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using JewelSuite.Core;
+﻿using System;
+using System.Runtime.Caching;
 
-namespace JewelSuite.UnitTests.Core
+namespace JewelSuite.Core
 {
     /// <summary>
-    /// VolumeCalculationService Test
+    ///  HorizonDataService contract
     /// </summary>
-    [TestClass]
-    public class VolumeCalculationServiceTest
+    public interface IHorizonDataService
+    {
+        int[,] GetTopHorizonDepthInFeet();
+    }
+
+    /// <summary>
+    /// Horizon Data Service
+    /// </summary>
+    /// <seealso cref="JewelSuite.Core.IHorizonDataService" />
+    public class HorizonDataService : IHorizonDataService
     {
         /// <summary>
-        /// Calculates the oil and gas volume from top horizon test.
+        /// Gets the top horizon depth in feet.
         /// </summary>
-        [TestMethod]
-        public void CalculateOilAndGasVolumeFromTopHorizonTest()
+        /// <returns></returns>
+        public int[,] GetTopHorizonDepthInFeet()
         {
-            // Arrangements
-            var topHorizonDataInFeet = new int[,]
-                    {
+            ObjectCache cache = MemoryCache.Default;
+
+            // Try reading the cache content first. if null then make an entry  
+            int[,] topHorizonDepth = cache["TopHorizon"] as int[,];
+            if (topHorizonDepth == null || topHorizonDepth.Length == 0)
+            {
+                // Create an item policy for   
+                CacheItemPolicy policy = new CacheItemPolicy();
+                policy.AbsoluteExpiration = DateTimeOffset.Now.AddHours(1);
+
+                // Initialize the TopHorizon data from DB
+                // For demo, hard coded data used
+                topHorizonDepth = new int[,]
+                        {
                         {9911,9867,9824,9818,9767,9704,9691,9754,9843,10055,10082,10006,9865,9833,9842,9871},
                         {9889,9845,9804,9796,9746,9677,9644,9672,9753,9903,9998,9961,9854,10050,10039,10053},
                         {9845,9807,9792,9784,9732,9641,9580,9590,9639,9658,9757,9808,9824,10186,10421,10399},
@@ -44,14 +63,12 @@ namespace JewelSuite.UnitTests.Core
                         {10383,10278,10040,10014,10029,10057,10099,10134,10179,10285,10168,10095,10271,10295,10255,10202},
                         {10252,10251,10076,10079,10105,10156,10219,10236,10293,10399,10315,10205,10367,10363,10320,10270},
                         {10287,10094,10097,10123,10170,10235,10312,10342,10351,10457,10377,10292,10436,10424,10374,10330}
-                    };
+                        };
 
-            // Actions
-            var volumeCalculationService = new VolumeCalculationService();
-            var volumeInCubicMeter = volumeCalculationService.CalculateOilAndGasVolumeFromTopHorizonInCubicMeter(topHorizonDataInFeet);
-
-            // Assertions
-            Assert.AreEqual(volumeInCubicMeter, 2725210467.3667579);
+                //adding items to cache with expiration policy and the object value  
+                cache.Set("TopHorizon", topHorizonDepth, policy);
+            }
+            return topHorizonDepth;
         }
     }
 }

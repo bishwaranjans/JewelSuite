@@ -7,6 +7,9 @@ namespace JewelSuite.Module.Views
     /// </summary>
     public partial class HorizonView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HorizonView"/> class.
+        /// </summary>
         public HorizonView()
         {
             InitializeComponent();
