@@ -1,5 +1,5 @@
 ﻿using Prism.Mvvm;
-using JewelSuite.Core;
+using JewelSuite.Core.Commands;
 
 namespace JewelSuite.ViewModels
 {

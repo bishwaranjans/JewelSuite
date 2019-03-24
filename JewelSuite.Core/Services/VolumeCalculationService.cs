@@ -1,6 +1,6 @@
 ﻿using JewelSuite.Core.Utilities;
 
-namespace JewelSuite.Core
+namespace JewelSuite.Core.Services
 {
     /// <summary>
     /// Volume calculation service

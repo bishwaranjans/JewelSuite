@@ -1,7 +1,8 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using JewelSuite.Core;
 using JewelSuite.Core.Utilities;
+using JewelSuite.Core.Commands;
+using JewelSuite.Core.Services;
 
 namespace JewelSuite.Module.ViewModels
 {

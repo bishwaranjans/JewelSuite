@@ -1,6 +1,6 @@
 ﻿using Prism.Commands;
 
-namespace JewelSuite.Core
+namespace JewelSuite.Core.Commands
 {
     /// <summary>
     /// Aplication commands

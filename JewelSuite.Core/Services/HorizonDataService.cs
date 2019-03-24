@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Caching;
 
-namespace JewelSuite.Core
+namespace JewelSuite.Core.Services
 {
     /// <summary>
     ///  HorizonDataService contract

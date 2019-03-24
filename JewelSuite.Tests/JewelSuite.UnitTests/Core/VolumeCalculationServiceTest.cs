@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using JewelSuite.Core;
+using JewelSuite.Core.Services;
 
 namespace JewelSuite.UnitTests.Core
 {

@@ -1,7 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using JewelSuite.Core;
 using Moq;
 using JewelSuite.Module.ViewModels;
+using JewelSuite.Core.Commands;
+using JewelSuite.Core.Services;
 
 namespace JewelSuite.UnitTests.Module
 {

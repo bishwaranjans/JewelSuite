@@ -2,8 +2,9 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
-using JewelSuite.Core;
 using JewelSuite.Views;
+using JewelSuite.Core.Commands;
+using JewelSuite.Core.Services;
 
 namespace JewelSuite
 {
